@@ -1,0 +1,169 @@
+.bc-hero
+	background: url(../img/bg-hero.png) no-repeat
+	background-size: cover
+	height: calc(100vh - 97px)
+	overflow: hidden
+	.container
+		height: 100%
+	.row
+		height: 100%
+	.col-md-8
+		+mq(lg)
+			flex: 0 0 100%
+			max-width: 100%
+		+mq(991px)
+			text-align: center
+	.col-md-4
+		+mq(lg)
+			display: none
+	.col-md-6
+		margin: auto 0
+	&__title
+		font-size: 50px
+		font-weight: 400
+		letter-spacing: -0.5px
+		line-height: 40px
+		margin-bottom: 30px
+		color: $color-dark-ultra
+		br
+			+mq(576px)
+				display: none
+		+mq(lg)
+			text-align: center
+		+mq(576px)
+			
+			margin-bottom: 15px
+			font-size: 30px
+			line-height: 30px
+			font-weight: 600
+		span
+			font-size: 30px
+			font-family: gheavy;
+			background: linear-gradient(45deg, #3562c7 33%, #90b2ff)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+			text-transform: uppercase
+			+mq(sm)
+				font-size: inherit
+				font-family: inherit
+				text-transform: lowercase
+		b
+			font-size: 28px
+			font-weight: 400
+			+minq(md)
+				position: relative
+				top: -10px
+
+	&__subtitle
+		font-size: 18px
+		font-weight: 400
+		letter-spacing: -0.1px
+		color: $color-dark-ultra
+		+mq(576px)
+			font-size: 16px
+			text-align: center
+			line-height: 20px
+	&__features
+		margin: 60px 0
+		display: flex
+		flex-wrap: wrap
+
+		justify-content: space-between
+		+mq(xl)
+			margin: 16px 0
+		// +mq(820px)
+		// 	margin: 40px 0
+		+mq(576px)
+			margin: 14px 0
+	&__feature
+		display: flex
+		align-items: center
+		+mq(576px)
+			width: 100%
+			flex: 0 0 100%
+			&:nth-child(2)
+				margin-top: 10px
+			// flex: 0 0 50%
+		+mq(xl)
+			&:last-child
+				margin-top: 10px
+				width: 100%
+				flex: 0 0 100%
+		p
+			color: $color-dark-ultra
+			font-size: 16px
+			font-weight: 400
+			letter-spacing: -0.1px
+			line-height: 22px
+			+mq(576px)
+				br
+					display: none
+			+mq(576px)
+				font-size: 14px
+
+	&__icon
+		margin-right: 14px
+		box-shadow: 0 0 12px 2px rgba(0,0,0,.1)
+		background-color: #fff
+		width: 60px
+		display: inline-block
+		height: 60px
+		border-radius: 17px
+		position: relative	
+
+		+mq(md)
+			&:first-child
+				min-width: 50px
+			width: 50px
+			height: 50px
+		&::before, &::after
+			+posa
+		&::before
+			font: 2rem/1 ci
+			color: $primary
+			background: linear-gradient(45deg, #3562c7 33%, #90b2ff)
+			-webkit-background-clip: text
+			-webkit-text-fill-color: transparent
+		&--1
+			&::before
+				content: '\e920'
+		&--2
+			&::before
+				content: '\e918'
+		&--3
+			&::before
+				content: '\e91c'
+				font: 1.5rem/2 ci
+		.b-animate
+			&::before
+				+ba(10)
+			&::after
+				+ba(30)
+
+	&__text
+		color: $color-dark-ultra
+		font-size: 16px
+		font-weight: 400
+		letter-spacing: -0.1px
+		margin-top: 15px	
+		+mq(768px)
+			text-align: center
+		+mq(576px)
+			// text-align: center
+			font-size: 14px
+			margin-top: 0
+	&__img-wrap
+		display: flex
+		align-items: center
+		height: 100%
+		+mq(lg)
+			display: none
+		img
+			z-index: 20
+			position: relative
+		.b-animate
+			position: relative
+			&::before
+				+ba(60)
+			&::after
+				+ba(120)

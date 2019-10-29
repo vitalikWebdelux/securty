@@ -1,0 +1,62 @@
+.btn--advantage
+	position: relative
+	&:hover
+		.a_span, .c_span
+			width: calc(100% - 20px)
+			height: 20px
+		.b_span, .d_span
+			width: 20px
+			height: calc(100% - 20px)
+	
+.a_span
+	width: 100%
+	height: 100%
+	position: absolute
+	left: 20px
+	top: 0px
+	width: 0
+	height: 20px
+	background-color: $gray-1
+	transition: all .3s ease-out
+	transform-origin: 0
+.b_span
+	width: 100%
+	height: 100%
+	position: absolute
+	right: 0px
+	top: 20px
+	width: 20px
+	height: 0
+	background-color: $gray-1	
+	transition: all .3s ease-out
+	transform-origin: 0
+
+.c_span
+	width: 100%
+	height: 100%
+	position: absolute
+	right: 20px
+	bottom: 0px
+	width: 0
+	height: 20px
+	background-color: $gray-1	
+	transition: all .3s ease-out
+	transform-origin: 0
+
+.d_span
+	width: 100%
+	height: 100%
+	position: absolute
+	left: 0px
+	bottom: 20px
+	width: 20px
+	height: 0
+	background-color: $gray-1	
+	transition: all .3s ease-out
+	transform-origin: 0
+
+		// background-color: #000
+	// span:nth-child(2)
+	// 		position: absolute
+	// 		left: 0
+	// 		top: 0

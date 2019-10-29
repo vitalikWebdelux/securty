@@ -1,0 +1,60 @@
+.header
+	height: 97px
+	background-color: #fff
+	&__interface-wrap
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+	.container
+		height: 100%
+.mainheader--top
+	display: flex
+	height: 100%
+	padding: 10px 0
+.mainheader
+	background: #fff
+	padding: 28px 25px 25px
+	.logo 
+		svg, img
+			display: block
+			width: 100%
+		.socials-list
+			display: inline-block
+			vertical-align: middle
+		.glow
+			transition: all .3s
+			stroke: white
+.desctop-logo
+	+mq(sm)
+		display: none
+.mobile-logo
+	display: none
+	+mq(sm)
+		display: inline
+.hov-blue, .hov-white
+	transition: all .3s
+.logo
+	height: 60px
+	display: inline-block
+	vertical-align: middle
+	margin-right: 51px
+	width: 248px
+	position: relative
+	left: -5px
+	transition: all .3s
+	z-index: 2
+	+mq(sm)
+		width: auto
+		margin-right: auto
+	&:hover
+		.hov-white
+			fill: #fff
+		.hov-blue
+			fill: #4F88FF
+		.glow
+			stroke: rgba(79,136,255,0.2)
+			filter: url(#blur-filter)
+.mainheader--top-left
+	display: flex
+	align-items: center

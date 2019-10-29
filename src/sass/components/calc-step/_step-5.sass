@@ -1,0 +1,72 @@
+.city
+	justify-content: space-around
+	flex-wrap: wrap
+	display: flex
+	&__container
+		&:last-child
+			+mq(md)
+				width: 96%
+		width: calc(100% / 4 - 4%)
+		height: 75px
+		background-color: #fafafa
+		border-radius: 14px
+		margin-bottom: 30px
+		+mq(lg)
+			height: 40px
+			width: calc(100% / 2 - 4%)
+		+mq(sm)
+			margin-bottom: 15px
+			font-size: 13px
+
+		&--input
+			width: calc(100% / 2 - 4%)
+		input[type="text"]
+			height: 100%
+			margin-left: 20px
+			padding: 10px 0 10px 20px
+			width: 100%
+			border: none
+			border-left: 4px dotted $color-light-ultra
+			background-color: $gray-white
+			color: #222328
+			&:focus
+				color: #fff
+			&::placeholder
+				color: color-dark-medium
+
+		input[type="radio"]:checked ~ .version__label
+			input[type="text"]
+				background-color: $primary
+				color: #fff
+				&::placeholder
+					color: #fff
+			&__name
+				&::after
+					color: #fff
+					+mq(425px)
+						display: none
+	&__name
+		padding-left: 75px
+		position: relative
+		text-align: left
+		line-height: 20px
+		&::after
+			content: '\e900'
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			-webkit-transform: translate(-50%,-50%)
+			transform: translate(-50%,-50%)
+			left: 25px
+			font: 2rem/1 ci;
+			color: #dcdcdc
+			z-index: 2
+			+mq(sm)
+				font-size: 1.5rem
+			+mq(356px)
+				display: none
+		+mq(sm)
+			padding-left: 48px
+		+mq(356px)
+			padding-left: 15px

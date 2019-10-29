@@ -1,0 +1,96 @@
+.slider
+	border-radius: 14px
+	box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1)
+.bc-slide
+	background: #fff
+	border-radius: 14px
+	padding-top: 80px
+	// padding-bottom: 50px
+	min-height: 0
+	&:last-child
+		background: linear-gradient(to right,#538aff,#5f92ff,#6b9aff,#76a1ff,#81a9ff)
+	+mq(lg)
+		padding-top: 70px
+	&__title
+		color: $primary
+		font-family: 'gb', sans-serif
+		font-size: 24px
+		text-align: center
+		letter-spacing: -0.25px
+		position: relative
+		margin-bottom: 80px
+		z-index: 1
+		+mq(lg)
+			margin-bottom: 70px
+		+mq(sm)
+			margin-bottom: 30px
+			padding: 0 5px
+			line-height: 24px
+		&--city
+			margin-bottom: 10px	
+
+		&--form
+			color: #fff
+			&::after
+				opacity: 0.2
+		&::after
+			+posa
+			background: url(../img/icon/imprint.svg) no-repeat
+			content: ''
+			width: 80px
+			height: 102px
+			z-index: -1
+	&__subtitle
+		margin-bottom: 62px
+		text-align: center
+		position: relative	
+		z-index: 1
+.slick-slide
+	min-height: 0
+	&:focus
+		outline: none
+.slick-dots
+	position: absolute
+	bottom: -70px
+	display: block
+	width: 100%
+	padding: 0
+	margin: 0
+	list-style: none
+	text-align: center
+	li
+		position: relative
+		display: inline-block
+		width: 20px
+		height: 20px
+		margin: 0 5px
+		padding: 0
+		cursor: pointer
+		button
+			font-size: 0
+			line-height: 0
+			display: block
+			width: 10px
+			height: 10px
+			padding: 5px
+			cursor: pointer
+			color: transparent
+			border: 0
+			background: $primary
+			border-radius: 50%
+			&:hover
+				opacity: 0.75
+				color: black
+			&::before
+				font-size: 6px
+				line-height: 20px
+				position: absolute
+				top: 0
+				left: 0
+				width: 20px
+				height: 20px
+				content: '•'
+				text-align: center
+				opacity: .25
+				color: black
+				-webkit-font-smoothing: antialiased

@@ -1,0 +1,104 @@
+.step
+	&__container
+		position: relative
+		text-align: center
+		+minq(xl)
+			&:not(:last-child)
+				margin-right: 35px
+	&__custom
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		align-items: center
+		margin: auto 0
+	&__name
+		color: $color-dark-medium
+		text-align: center
+		line-height: 24px
+		span
+			color: $primary
+			font-family: 'gm'
+		+mq(sm)
+			font-size: 13px
+			line-height: 20px
+		
+
+	&__point
+		text-align: center
+		font-size: 18px
+		color: $color-light-ultra
+		+mq(sm)
+			font-size: 0px
+	&__label
+		transition: all 3s
+	input[type="radio"]:checked ~ &__label
+		position: relative
+		&::before
+			content: '\e900'
+			+posa
+			font: 2rem/1 ci
+			color: #fff
+			z-index: 2
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			border-radius: 24px
+			bottom: 0
+			right: 0
+			margin: 0
+			background-color: $primary
+			opacity: 0.7
+
+	img
+		border-radius: 24px
+		cursor: pointer
+.rooms
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	align-items: center
+	margin: auto 0
+	+mq(md)
+		padding: 0 5px
+		justify-content: space-around
+	&__container
+		position: relative
+		text-align: center
+		+mq(sm)
+			font-size: 13px
+		+mq(xl)
+			width: calc(90% / 3 - 5px)
+			&:not(:last-child)
+				margin: 5px
+		+mq(md)
+			width: calc(90% / 2 - 5px)
+			&:not(:last-child)
+				margin: 5px
+				margin-bottom: 15px
+		+minq(xl)
+			&:not(:last-child)
+				margin-right: 35px
+		
+
+		+minq(xl)
+	input[type="radio"]:checked ~ &__label
+		position: relative
+		&::before
+			content: '\e900'
+			+posa
+			font: 2rem/1 ci
+			color: #fff
+			z-index: 2
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			border-radius: 24px
+			bottom: 0
+			right: 0
+			margin: 0
+			background-color: $primary
+			opacity: 0.7

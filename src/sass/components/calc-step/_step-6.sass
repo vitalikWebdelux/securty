@@ -1,0 +1,65 @@
+.option
+	align-items: baseline
+	@media screen and (min-width: 768px) and (max-width: 992px)
+		justify-content: space-around
+	&__item
+		width: calc(100% / 3 - 12%)
+		margin: 0 2% 3%
+		text-align: center
+
+		+mq(md)
+			width: calc(100% / 2 - 12%)
+
+	input[type="radio"]:checked ~ &__label
+		background-color: $primary
+		border: none
+		&::after
+			color: #fff
+		&::before
+			content: ''
+			opacity: 0.1
+	&__label
+		height: 168px
+		width: 168px
+		border: 4px dotted $color-light-ultra
+		border-radius: 14px
+		position: relative
+		cursor: pointer
+		overflow: hidden
+		+mq(sm)
+			height: 64px
+			max-width: 100%
+		&::before
+			content: ''
+			+posa
+				top: 88%
+			opacity: 0
+			background: url(../img/icon/imprint.svg) no-repeat
+			width: 80px
+			height: 102px
+		&::after
+			+posa
+			font: 4.2rem/1 ci
+			color: $primary
+			+mq(sm)
+				font-size: 2.2rem
+		&--1
+			&::after
+				content: '\e90e'
+		&--2
+			&::after
+				content: '\e90d'
+		&--3
+			&::after
+				content: '\e914'
+		&--4
+			&::after
+				content: '\e90a'
+		&--5
+			&::after
+				content: '\e90c'
+		&--6
+			&::after
+				content: '\e904'
+label
+	margin-bottom: 0

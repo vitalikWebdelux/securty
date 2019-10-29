@@ -1,0 +1,91 @@
+// =============================================================================
+// Media Queries
+// =============================================================================
+@mixin mq($device-w)
+  @if map-has-key($media-breakpoints, $device-w)
+    @media (max-width: #{map-get($media-breakpoints, $device-w)})
+      @content
+  @else
+    @media (max-width: $device-w)
+      @content
+
+@mixin minq($device-w)
+  @if map-has-key($media-breakpoints, $device-w)
+    @media (min-width: #{map-get($media-breakpoints, $device-w)})
+      @content
+  @else
+    @media (min-width: $device-w)
+      @content
+
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)
+  $src: null
+
+  $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") )
+
+  $formats: ( otf: "opentype", ttf: "truetype" )
+  @each $ext in $exts
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    $src: append($src, url(quote( $path + "." + $extmod)) format(quote($format)), comma)
+  @font-face
+    font-family: quote($name)
+    font-style: $style
+    font-weight: $weight
+    src: $src
+
+// =============================================================================
+// Keyframes
+// =============================================================================
+@mixin keyframes ($name) 
+  @keyframes #{$name}
+    @content
+
+@mixin staggered_transitions($nth: 1, $items: 3, $initial: 0, $step: .3)
+  @for $i from $nth through $items
+    &:nth-of-type(#{$i})
+      transition-delay: #{$initial}s
+    $initial: $initial + $step
+
+// =============================================================================
+// Display flex
+// =============================================================================
+@mixin flex($jc: space-around, $ai: flex-start, $fd: row)
+  display: flex
+  justify-content: $jc
+  align-items: $ai
+  flex-direction: $fd
+  @content
+
+
+// =============================================================================
+// Style text
+// =============================================================================
+@mixin title($fw: 500, $c: $pr, $ls: 1.1px, $fs: 24px)
+  @content
+  // h1 and h2
+
+@mixin text($fw: 500, $c: $sc, $ls: 1.1px)
+  @content
+
+@mixin posa()
+  display: block
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  @content
+
+@mixin ba($num: 20)
+  content: ''
+  position: absolute
+  border: 1px solid #fff
+  display: block
+  left: -#{$num}px
+  right: -#{$num}px
+  top: -#{$num}px
+  bottom: -#{$num}px
+  border-radius: 50%
+  animation: pulse 2.2s linear infinite

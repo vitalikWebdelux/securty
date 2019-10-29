@@ -1,0 +1,52 @@
+body
+  font-family: 'g', sans-serif
+  // font-weight: 500
+  background-color: #fff
+  overflow-x: hidden
+  font-size: 16px
+  color: $color-dark-ultra
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
+*
+	margin: 0
+	padding: 0
+body * 
+  -webkit-tap-highlight-color: transparent
+p
+	text-align: left
+
+.hidden
+  opacity: 0
+  visibility: hidden
+  transition : all 1s ease
+.show
+  opacity: 1
+  visibility: visible
+  transition : all 1s ease
+
+body .container
+  margin: 0 auto
+  padding: 0 20px
+  // position: relative
+  @media (min-width: 1200px)
+    max-width: 1330px
+
+  // @media (max-width: 1200px)
+  //   max-width: 100%
+
+// ::-webkit-scrollbar
+//   width: .4rem
+// ::-webkit-scrollbar-track
+//   background: $gray-3
+//   width: 0
+// ::-webkit-scrollbar-thumb
+//   background: $primary
+// ::-webkit-scrollbar-thumb:hover
+//   background: lighten($primary, 5%)
+
+img
+  display: block
+  max-width: 100%

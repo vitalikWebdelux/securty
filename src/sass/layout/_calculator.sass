@@ -1,0 +1,128 @@
+@import '../components/calc-step/step-main'
+
+.calc
+	padding: 85px 0
+	position: relative
+	+mq(lg)
+		padding: 30px 0
+		margin-bottom: 39px
+
+	
+	&::after
+		content: ''
+		position: absolute
+		left: 0
+		top: 30%
+		right: 0
+		height: 630px
+		background-color: #5f92ff99
+		z-index: -2
+		opacity: 0
+		visibility: hidden
+		transition: 0.3s
+		+mq(md)
+			content: none
+
+	&.overlay
+		&::after
+			opacity: 1
+			visibility: visible
+			z-index: 2
+			box-shadow: 0 4px 4px 4px rgba($primary, 0.4)
+
+
+	&__title
+		text-transform: uppercase
+		font-family: 'gb'
+		font-size: 40px
+		letter-spacing: -0.025px
+		text-align: center
+		color: $primary
+		+mq(sm)
+			margin-bottom: 15px
+			font-size: 30px
+			line-height: 30px
+			font-weight: 600
+
+	&__subtitle
+		font-size: 17px
+		font-weight: 400
+		color: $color-dark-medium
+		text-align: center
+		letter-spacing: -0.025px
+		+mq(lg)
+			line-height: 25px
+	&__progress-text
+		margin-top: 30px
+		color: $color-light-big
+		font-family: 'gb', sans-serif
+		+mq(lg)
+			margin-top: 0
+		span
+			color: $primary
+			transition: all .2s ease-in-out
+
+	&__progress
+		margin-top: 5px
+		margin-bottom: 13px
+		display: block
+		width: 100%
+		height: 10px
+		border-radius: 10px
+		overflow: hidden
+
+		background-color: #f5f5f5
+		background-image: $gradient
+		background-repeat: no-repeat
+		background-size: 0 100%
+		transition: background-size .4s ease-in-out
+
+		+mq(lg)
+			margin-bottom: 20px
+	&__btns
+		display: flex
+		justify-content: center
+		margin: 60px 0
+		+mq(lg)
+			margin: 30px
+		+mq(sm)
+			margin: 15px 0 
+			flex-direction: column
+			align-items: center
+
+		.btn--next, .form__submit
+			&:disabled
+				opacity: .6
+				cursor: not-allowed
+
+	blockquote
+		text-align: center
+		
+	.slick-current .slick-current
+		.taryf
+			&__tooltip
+				left: -10%
+				right: auto
+
+				&::after
+					left: auto
+					right: 70%
+	.slick-current .taryf__item
+		&:first-child
+			.taryf
+				&__tooltip
+					left: -10%
+					right: auto
+					&::after
+						left: auto
+						right: 70%
+.sr-only 
+	position: absolute
+	width: 1px
+	height: 1px
+	padding: 0
+	margin: -1px
+	overflow: hidden
+	clip: rect(0,0,0,0)
+	border: 0
+

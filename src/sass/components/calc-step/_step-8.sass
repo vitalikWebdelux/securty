@@ -1,0 +1,62 @@
+.bc-form
+	background: $gradient
+	border-radius: 15px
+	&__input-wrap
+		display: flex
+		justify-content: center
+		position: relative
+		z-index: 10
+		+mq(md)
+			flex-direction: column	
+	&__input-item
+		margin: 0 4%
+	&__submit-wrap
+		display: flex
+		margin: 50px 0
+		justify-content: center
+		padding: 38px 0
+		position: relative	
+		z-index: 0
+		padding: 0 20px
+		&::after
+			content: 'BEZPEKACLUB'
+			font-size: 190px
+			font-family: 'gheavy'
+			color: #fff
+			opacity: 0.05
+			position: absolute	
+			top: 44%
+			z-index: -1
+			line-height: 100px
+			left: 50%
+			transform: translate(-50%, -50%)
+	input
+		background-color: transparent
+		border: none
+		border-bottom: 2px solid #fff
+		padding-left: 38px
+		font-weight: 400
+		font-family: 'gl', sans-serif
+		height: 50px
+		color: #fff
+		font-size: 14px
+		width: 100%
+		&::placeholder
+			color: #fff
+			font-size: 14px
+			font-weight: 400
+			font-family: 'gl', sans-serif
+	&__name
+		background: url(../img/icon/name.svg)  no-repeat
+		background-position: center left
+	&__phone
+		background: url(../img/icon/phone.svg) no-repeat
+		background-position: center left
+	&__email
+		background: url(../img/icon/email.svg) no-repeat
+		background-position: center left
+	.bc-slide__title
+		color: $white!important
+		text-transform: uppercase
+		&::after
+			opacity: 0.1

@@ -1,0 +1,53 @@
+.prize
+	align-items: baseline
+	&__item
+		text-align: center
+		cursor: pointer
+		width: calc(100% / 4 - 85px)
+
+		+mq(xl)
+			width: calc(100% / 2 - 20px)
+		margin: 0 10px 10px
+	input[type="radio"]:checked ~ &__label
+		background-color: $primary
+		border: none
+		
+		&::after
+			color: #fff
+	&__label
+		height: 248px
+		width: 100%
+		border: 4px dotted $color-light-ultra
+		border-radius: 14px
+		position: relative
+		cursor: pointer
+		overflow: hidden
+		+mq(md)
+			height: 120px
+			width:  100%
+		&::after
+			+posa
+			font: 8.2rem/1 ci
+			color: $primary
+			+mq(sm)
+				font-size: 6.2rem
+		&::before
+			content: ''
+			+posa
+			background: url(../img/icon/blick.svg) no-repeat
+			width: 140px
+			height: 139px
+			+mq(sm)
+				display: none
+		&--1
+			&::after
+				content: '\e916'
+		&--2
+			&::after
+				content: '\e90f'
+		&--3
+			&::after
+				content: '\e911'
+		&--4
+			&::after
+				content: '\e91d'

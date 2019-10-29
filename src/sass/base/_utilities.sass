@@ -1,0 +1,30 @@
+input
+  &:focus, &:hover
+    outline: none
+a 
+  text-decoration: none
+  &:hover, &:focus &:active
+  	text-decoration: none
+
+.calc 
+
+	input[type="radio"], input[type="checkbox"]
+		display: none
+	input
+	  &:focus, &:hover
+    outline: none
+	label
+		transition: all .2s ease-in
+    cursor: pointer !important
+p
+	margin: 0
+	padding: 0
+
+.text-d
+  &--mobile
+    display: none
+    +mq(sm)
+      display: inline
+  &--desktop
+    +mq(sm)
+      display: none

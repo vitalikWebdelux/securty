@@ -1,0 +1,81 @@
+.version
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+	+mq(md)
+		padding: 0 5px
+		justify-content: space-around
+	.slick-slide
+		&:not(:last-child)
+			margin-right: 15px
+	&__container
+		width: calc(100% / 3 - 30px)
+		height: 125px
+		background-color: $gray-white
+		border-radius: 14px
+		margin-bottom: 15px
+		+mq(sm)
+			font-size: 13px
+		+mq(xl)
+			width: calc(90% / 3 - 10px)
+			&:not(:last-child)
+				// margin: 5px
+		+mq(md)
+			width: calc(90% / 2 - 5px)
+			&:not(:last-child)
+		+minq(xl)
+			margin-right: 15px 
+			margin-left: 15px 
+			margin-bottom: 15px
+			&:last-child
+	
+		
+	input[type="radio"]:checked ~ &__label
+		background-color: $primary
+		
+		&::before
+			content: ''
+			+posa
+				transform: rotate(90deg)
+				top: 10%
+			background: url(../img/icon/imprint.svg) no-repeat
+			width: 80px
+			height: 102px
+			opacity: 0.1
+			left: -14px
+			z-index: -1
+		p
+			color: #fff!important
+			&::after
+				color: #fff!important
+	&__label
+		display: flex
+		align-items: center
+		height: 100%
+		border-radius: 14px
+		position: relative
+		overflow: hidden
+		z-index: 0
+		padding-right: 30px
+		cursor: pointer
+		+mq(sm)
+			padding-right: 0		
+	&__name
+		padding-left: 75px
+		text-align: left
+		line-height: 20px
+		&::after
+			content: '\e900'
+			+posa
+				left: 25px
+			font: 2rem/1 ci
+			color: #dcdcdc
+			z-index: 2
+			+mq(sm)
+				z-index: -1
+				top: 94%
+				left: 91%
+		+mq(sm)
+			padding-left: 0
+			text-align: center
+			width: 100%
