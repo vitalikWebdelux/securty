@@ -32,14 +32,10 @@ $smoky_dance_includes = array(
 	// Base Theme
 	'/theme-settings.php',                  // Initialize theme default settings.
 	'/theme-setup.php',                           // Theme setup and custom theme supports.
-	'/theme-widgets.php',                         // Register widget area.
 	'/theme-enqueue.php',                         // Enqueue scripts and styles.
 	'/theme-optimize.php',
 	'/template-tags.php',                   // Custom template tags for this theme.
-	'/theme-pagination.php',                      // Custom pagination for this theme.
 	'/theme-hooks.php',                           // Custom hooks.
-	'/theme-extras.php',                          // Custom functions that act independently of the theme templates.
-	'/tgm/khl-register-plugins.php',        // Register Plugins.
 	'/classes/class-carbon-fields.php',  // Carbon fields
 	'/send.php'
 );
