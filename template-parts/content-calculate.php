@@ -31,7 +31,7 @@
 				<span class="slider__label sr-only"></span>
 					
 				</div>
-			<div class="slider" id="b_step_slider">
+			<div class="bc-slider" id="b_step_slider">
 				<?php 	
 					require_once SD_THEME_DIR.'/template-parts/components/step-calculate/calc_step_1.php'; 
 					require_once SD_THEME_DIR.'/template-parts/components/step-calculate/calc_step_2.php'; 

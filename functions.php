@@ -1,8 +1,8 @@
 <?php
 /**
- * murren functions and definitions
+ * security functions and definitions
  *
- * @package murren
+ * @package security
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

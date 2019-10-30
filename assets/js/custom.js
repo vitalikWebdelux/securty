@@ -39,7 +39,7 @@ var bezpekaModule, bezpekaValidation;
     });
     var els = {
       $calc_section: $('section.calc'),
-      $calc_slider: $('.slider'),
+      $calc_slider: $('.bc-slider'),
       $taryf_slider: $('.taryf'),
       $progress_bar: $('.calc__progress'),
       $progress_bar_label: $('.calc__progress-text span'),
@@ -52,7 +52,8 @@ var bezpekaModule, bezpekaValidation;
       $version: $('.version__container'),
       $type: $('.type__item--step'),
       $taryf: $('.taryf__item'),
-      $city: $('.city__container'),
+      $city: $('.city__container--step'),
+      $city_input_text: $('#city-input-text'),
       $option: $('.option__item'),
       $prize: $('.prize__item')
     };
@@ -173,7 +174,7 @@ var bezpekaModule, bezpekaValidation;
             $(this).blur().focus();
           }
 
-          $('input[type="submit"]').attr('disabled', 'disabled');
+          $('button[type="submit"]').attr('disabled', 'disabled');
           var re = new RegExp("_$");
 
           if (!re.test(myVar)) {
@@ -257,8 +258,7 @@ var bezpekaModule, bezpekaValidation;
 
         els.$calc_slider.on('init', function () {
           els.$next_btn.attr('disabled', true);
-        }); // Slick for calc steps
-
+        });
         els.$calc_slider.slick({
           prevArrow: false,
           nextArrow: false,
@@ -273,8 +273,7 @@ var bezpekaModule, bezpekaValidation;
         els.$calc_slider.on('beforeChange', function () {
           els.$next_btn.attr('disabled', true);
         });
-        this.progressHandler(els.$calc_slider); // Prev / next click events
-
+        this.progressHandler(els.$calc_slider);
         els.$next_btn.on('click', function (e) {
           bezpekaModule.prevNextHandler(els.$calc_slider, 'next', e);
           scrollToTarget($('#b_step_slider'));
@@ -282,8 +281,7 @@ var bezpekaModule, bezpekaValidation;
         els.$prev_btn.on('click', function (e) {
           bezpekaModule.prevNextHandler(els.$calc_slider, 'prev', e);
           scrollToTarget($('#b_step_slider'));
-        }); // Slick for taryfs
-
+        });
         els.$taryf_slider.slick({
           slidesToShow: 4,
           slidesToScroll: 1,
@@ -309,17 +307,21 @@ var bezpekaModule, bezpekaValidation;
           }]
         });
         $('.f-radio-taryf').on('change', function () {
+          if ($('#city-15').is(':checked')) {
+            $('#city-input-text').attr('name', 'city-five');
+          } else {
+            $('#city-input-text').val('');
+            $('#city-input-text').attr('name', false);
+          }
+
           var filterClass = getFilterValue();
           els.$taryf_slider.slick('slickUnfilter');
           els.$taryf_slider.slick('slickFilter', filterClass);
-
-          if ($('#city-15').is(':checked')) {
-            $('#city-input-text').trigger("focus");
+          $('#city-input-text').on('click', function () {
+            $('#city-15').trigger("click");
             $('#city-input-text').attr('disabled', false);
-          } else {
-            $('#city-input-text').attr('disabled', true);
-          }
-
+            $('.btn-5').attr('disabled', false);
+          });
           $(this).closest('.slider').find('.bc-btn--next').attr('disabled', false);
         });
       },
